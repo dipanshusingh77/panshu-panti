@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panshu-Panti Kapde - Premium Fashion Clothing Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff3e6c;
+            --secondary: #222831;
+            --accent: #00adb5;
+            --light: #f8f9fa;
+            --dark: #121212;
+            --gray: #393e46;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Professional Header */
+        .announcement-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .announcement-bar i {
+            margin: 0 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* Professional Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(255, 62, 108, 0.3);
+        }
+        
+        .logo-icon i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-sub {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: -5px;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            flex: 0.5;
+            position: relative;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 14px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+        
+        .search-bar:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(255, 62, 108, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .search-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px;
+        }
+        
+        .action-item:hover {
+            color: var(--primary);
+        }
+        
+        .action-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        
+        .action-item:hover .action-icon {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .action-label {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            padding: 15px 0;
+        }
+        
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .nav-offer {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btn {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 62, 108, 0.3);
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 62, 108, 0.4);
+        }
+        
+        /* Categories Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .title-line {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1600px;
+            margin: 0 auto 80px;
+        }
+        
+        .category-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            height: 350px;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 40px 30px 30px;
+        }
+        
+        .category-overlay h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .category-overlay p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 0 5% 80px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(255, 62, 108, 0.2);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-img-container {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.4s;
+        }
+        
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .action-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--dark);
+        }
+        
+        .action-btn:hover {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+            height: 50px;
+            overflow: hidden;
+        }
+        
+        .product-category {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .original-price {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .discount {
+            color: var(--success);
+            font-size: 14px;
+            font-weight: 600;
+            background: #e8f5e9;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 8px;
+        }
+        
+        .stars {
+            color: #ffc107;
+        }
+        
+        .rating-count {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .add-to-cart:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 62, 108, 0.2);
+        }
+        
+        /* Featured Brands */
+        .brands-section {
+            background: #f8f9fa;
+            padding: 60px 5%;
+            margin: 80px 0;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .brand-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .brand-card img {
+            max-width: 120px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        
+        .brand-card:hover img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 5% 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1600px;
+            margin: 0 auto 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            font-size: 12px;
+        }
+        
+        .social-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            transform: translateY(-5px);
+        }
+        
+        .newsletter {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .newsletter input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .newsletter button {
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            font-size: 28px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 14px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+        
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: right 0.4s;
+            padding: 25px;
+            overflow-y: auto;
+        }
+        
+        .cart-modal.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .cart-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.3s;
+        }
+        
+        .close-cart:hover {
+            color: var(--primary);
+        }
+        
+        .cart-items {
+            margin-bottom: 30px;
+            min-height: 200px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .cart-item-controls button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .cart-item-controls button:hover {
+            background: #f0f0f0;
+        }
+        
+        .cart-item-quantity {
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #ff3e6c;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 25px 0;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+        }
+        
+        .cart-checkout {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #ff6b95);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .cart-checkout:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 62, 108, 0.2);
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 60px 0;
+            color: #888;
+        }
+        
+        .cart-empty i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+            backdrop-filter: blur(3px);
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 46px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-container {
+                width: 100%;
+                order: 3;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .product-filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .product-img-container {
+                height: 280px;
+            }
+            
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fas fa-gift"></i> FREE SHIPPING on orders above ₹499 | <i class="fas fa-exchange-alt"></i> Easy Returns | <i class="fas fa-truck"></i> Cash on Delivery Available</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">PANSHU-PANTI</div>
+                    <div class="logo-sub">PREMIUM FASHION</div>
+                </div>
+            </a>
+
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search for shirts, dresses, jeans, sarees, and more...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <div class="header-actions">
+                <div class="action-item" id="account-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="action-label">Account</div>
+                </div>
+                <div class="action-item" id="wishlist-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="action-label">Wishlist</div>
+                </div>
+                <div class="action-item cart-icon" id="cart-icon">
+                    <div class="action-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="action-label">Cart</div>
+                    <div class="cart-count">0</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                    <a href="#" class="nav-link"><i class="fas fa-male"></i> Men</a>
+                    <a href="#" class="nav-link"><i class="fas fa-female"></i> Women</a>
+                    <a href="#" class="nav-link"><i class="fas fa-child"></i> Kids</a>
+                    <a href="#" class="nav-link"><i class="fas fa-fire"></i> New Arrivals</a>
+                    <a href="#" class="nav-link"><i class="fas fa-star"></i> Best Sellers</a>
+                    <a href="#" class="nav-link"><i class="fas fa-tshirt"></i> Summer Collection</a>
+                    <a href="#" class="nav-link"><i class="fas fa-snowflake"></i> Winter Wear</a>
+                    <a href="#" class="nav-link"><i class="fas fa-percent"></i> Offers</a>
+                </div>
+                <div class="nav-offer">
+                    <i class="fas fa-bolt"></i> FLAT 50% OFF ON FIRST ORDER
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your Style with Premium Fashion</h1>
+            <p class="hero-subtitle">Discover the latest trends in men's, women's, and kids' clothing. Quality fabrics, perfect fits, and exceptional designs.</p>
+            <button class="hero-btn">
+                <i class="fas fa-shopping-bag"></i> SHOP THE COLLECTION
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="section-title">
+            <h2>Shop By Category</h2>
+            <p>Browse through our extensive collection of premium clothing</p>
+            <div class="title-line"></div>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1617137968427-85924c8002f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800" alt="Men's Clothing">
+                <div class="category-overlay">
+                    <h3>Men's Fashion</h3>
+                    <p>Shirts, T-Shirts, Jeans, Formal Wear & Accessories</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800" alt="Women's Clothing">
+                <div class="category-overlay">
+                    <h3>Women's Collection</h3>
+                    <p>Dresses, Tops, Sarees, Kurtis & Ethnic Wear</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1f8e3db9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800" alt="Kids Clothing">
+                <div class="category-overlay">
+                    <h3>Kids Fashion</h3>
+                    <p>Clothing for Boys & Girls of All Ages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-title">
+            <h2>Featured Products</h2>
+            <p>Carefully curated collection of premium clothing items</p>
+            <div class="title-line"></div>
+        </div>
+        
+        <div class="product-filters">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="men">Men</button>
+            <button class="filter-btn" data-filter="women">Women</button>
+            <button class="filter-btn" data-filter="kids">Kids</button>
+            <button class="filter-btn" data-filter="new">New Arrivals</button>
+            <button class="filter-btn" data-filter="sale">On Sale</button>
+            <button class="filter-btn" data-filter="ethnic">Ethnic Wear</button>
+            <button class="filter-btn" data-filter="western">Western Wear</button>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Featured Brands -->
+    <section class="brands-section">
+        <div class="section-title">
+            <h2>Featured Brands</h2>
+            <p>Shop from the best brands in fashion industry</p>
+            <div class="title-line"></div>
+        </div>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Levi_Strauss_%26_Co._logo.svg" alt="Levi's">
+            </div>
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Adidas_Logo.svg" alt="Adidas">
+            </div>
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Nike-Logo.svg" alt="Nike">
+            </div>
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Allen_Solly_logo.svg" alt="Allen Solly">
+            </div>
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Peter_England_Logo.svg/1280px-Peter_England_Logo.svg.png" alt="Peter England">
+            </div>
+            <div class="brand-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/W_Rangler.svg" alt="Wrangler">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Panshu-Panti Kapde</h3>
+                <p>India's leading premium fashion destination. We deliver pan-India with free shipping on orders above ₹499.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/panshupanti" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/panshupanti" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/panshupanti" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://pinterest.com/panshupanti" target="_blank" class="social-icon">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://youtube.com/panshupanti" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Shop By Category</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Men's Clothing</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Women's Clothing</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Kids Clothing</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ethnic Wear</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Western Wear</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Winter Collection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Track Your Order</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Size Guide</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Return & Exchange</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Shipping Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section social-section">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to get updates on new arrivals and exclusive offers.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fas fa-university" title="Net Banking"></i>
+                    <i class="fas fa-wallet" title="Wallet"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Panshu-Panti Kapde. All rights reserved. | Designed with ❤️ for fashion lovers</p>
+            <p>Registered Office: Fashion Street, Mumbai, Maharashtra - 400001 | Email: support@panshupanti.com | Phone: +91 98765 43210</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <p>Add some products to your cart!</p>
+            </div>
+        </div>
+        <div class="cart-total">
+            <span>Total Amount:</span>
+            <span id="cart-total">₹0</span>
+        </div>
+        <button class="cart-checkout">
+            <i class="fas fa-lock"></i> Proceed to Checkout
+        </button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        // Extensive Product Database with 50+ Products
+        const products = [
+            // Men's Products (15 items)
+            {
+                id: 1,
+                name: "Men's Slim Fit Casual Shirt - Navy Blue",
+                category: "men",
+                tags: ["new", "western"],
+                price: 899,
+                originalPrice: 1499,
+                rating: 4.3,
+                reviews: 128,
+                image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Premium cotton slim fit casual shirt with French cuffs"
+            },
+            {
+                id: 2,
+                name: "Men's Denim Jeans - Dark Wash",
+                category: "men",
+                tags: ["sale", "western"],
+                price: 1499,
+                originalPrice: 2299,
+                rating: 4.5,
+                reviews: 210,
+                image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Stretch denim jeans with comfortable fit"
+            },
+            {
+                id: 3,
+                name: "Men's Polo T-Shirt - Black",
+                category: "men",
+                tags: ["new", "western"],
+                price: 699,
+                originalPrice: 999,
+                rating: 4.2,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Premium pique cotton polo t-shirt"
+            },
+            {
+                id: 4,
+                name: "Men's Formal Suit - Charcoal Grey",
+                category: "men",
+                tags: ["new", "western"],
+                price: 4999,
+                originalPrice: 7999,
+                rating: 4.7,
+                reviews: 67,
+                image: "https://images.unsplash.com/photo-1594938374182-94494521e8c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Two-piece formal suit for weddings and office"
+            },
+            {
+                id: 5,
+                name: "Men's Kurta Pyjama - Silk",
+                category: "men",
+                tags: ["ethnic", "new"],
+                price: 2999,
+                originalPrice: 4999,
+                rating: 4.6,
+                reviews: 145,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Traditional silk kurta pyjama for festivals"
+            },
+            {
+                id: 6,
+                name: "Men's Winter Jacket - Black",
+                category: "men",
+                tags: ["sale", "western"],
+                price: 1999,
+                originalPrice: 2999,
+                rating: 4.4,
+                reviews: 92,
+                image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Water-resistant winter jacket with hood"
+            },
+            {
+                id: 7,
+                name: "Men's Sports Shorts - Navy Blue",
+                category: "men",
+                tags: ["new", "western"],
+                price: 599,
+                originalPrice: 899,
+                rating: 4.1,
+                reviews: 56,
+                image: "https://images.unsplash.com/photo-1591208447805-5cb1c67c52c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Quick-dry sports shorts for gym and running"
+            },
+            {
+                id: 8,
+                name: "Men's Leather Jacket - Brown",
+                category: "men",
+                tags: ["new", "western"],
+                price: 3999,
+                originalPrice: 5999,
+                rating: 4.8,
+                reviews: 78,
+                image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Genuine leather jacket with quilted lining"
+            },
+            {
+                id: 9,
+                name: "Men's Sherwani - Wedding Collection",
+                category: "men",
+                tags: ["ethnic", "new"],
+                price: 8999,
+                originalPrice: 12999,
+                rating: 4.9,
+                reviews: 34,
+                image: "https://images.unsplash.com/photo-1566091447393-9817dcc0c5c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Heavy embroidered wedding sherwani"
+            },
+            {
+                id: 10,
+                name: "Men's Cargo Pants - Olive Green",
+                category: "men",
+                tags: ["sale", "western"],
+                price: 1299,
+                originalPrice: 1999,
+                rating: 4.3,
+                reviews: 112,
+                image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Military style cargo pants with multiple pockets"
+            },
+
+            // Women's Products (20 items)
+            {
+                id: 11,
+                name: "Women's Silk Saree - Kanjivaram",
+                category: "women",
+                tags: ["ethnic", "new"],
+                price: 4999,
+                originalPrice: 7999,
+                rating: 4.8,
+                reviews: 167,
+                image: "https://images.unsplash.com/photo-1595776613215-fe6a4244b6e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Traditional Kanjivaram silk saree with zari border"
+            },
+            {
+                id: 12,
+                name: "Women's Summer Dress - Floral Print",
+                category: "women",
+                tags: ["western", "new"],
+                price: 1299,
+                originalPrice: 1999,
+                rating: 4.6,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "A-line summer dress with floral print"
+            },
+            {
+                id: 13,
+                name: "Women's Kurti - Cotton Printed",
+                category: "women",
+                tags: ["ethnic", "sale"],
+                price: 899,
+                originalPrice: 1499,
+                rating: 4.4,
+                reviews: 234,
+                image: "https://images.unsplash.com/photo-1585487000160-6eb9ce6b5aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Comfortable cotton kurti with traditional print"
+            },
+            {
+                id: 14,
+                name: "Women's Jeans - High Waist Skinny",
+                category: "women",
+                tags: ["western", "sale"],
+                price: 1399,
+                originalPrice: 2199,
+                rating: 4.5,
+                reviews: 156,
+                image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Stretch denim skinny jeans"
+            },
+            {
+                id: 15,
+                name: "Women's Anarkali Suit - Party Wear",
+                category: "women",
+                tags: ["ethnic", "new"],
+                price: 2999,
+                originalPrice: 4999,
+                rating: 4.7,
+                reviews: 98,
+                image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Heavy embroidered anarkali suit for parties"
+            },
+            {
+                id: 16,
+                name: "Women's Tops - Casual Wear",
+                category: "women",
+                tags: ["western", "new"],
+                price: 599,
+                originalPrice: 999,
+                rating: 4.2,
+                reviews: 187,
+                image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Casual tops for daily wear"
+            },
+            {
+                id: 17,
+                name: "Women's Lehenga Choli - Wedding",
+                category: "women",
+                tags: ["ethnic", "new"],
+                price: 8999,
+                originalPrice: 14999,
+                rating: 4.9,
+                reviews: 45,
+                image: "https://images.unsplash.com/photo-1578774296842-c45e472b3028?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Bridal lehenga choli with heavy embroidery"
+            },
+            {
+                id: 18,
+                name: "Women's Jacket - Bomber Style",
+                category: "women",
+                tags: ["western", "sale"],
+                price: 1699,
+                originalPrice: 2599,
+                rating: 4.3,
+                reviews: 76,
+                image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Trendy bomber jacket for casual wear"
+            },
+            {
+                id: 19,
+                name: "Women's Salwar Suit - Chikankari",
+                category: "women",
+                tags: ["ethnic", "new"],
+                price: 1999,
+                originalPrice: 3299,
+                rating: 4.6,
+                reviews: 123,
+                image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Lucknowi chikankari salwar suit"
+            },
+            {
+                id: 20,
+                name: "Women's Skirt - Midi Length",
+                category: "women",
+                tags: ["western", "sale"],
+                price: 899,
+                originalPrice: 1499,
+                rating: 4.4,
+                reviews: 67,
+                image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Comfortable midi skirt for office wear"
+            },
+
+            // Kids Products (15 items)
+            {
+                id: 21,
+                name: "Kids' T-Shirt - Cartoon Print",
+                category: "kids",
+                tags: ["new", "western"],
+                price: 399,
+                originalPrice: 699,
+                rating: 4.5,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1558769132-92e5d5e6e4c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Cotton t-shirt with cartoon character print"
+            },
+            {
+                id: 22,
+                name: "Kids' Ethnic Set - Festive Wear",
+                category: "kids",
+                tags: ["ethnic", "new"],
+                price: 1299,
+                originalPrice: 1999,
+                rating: 4.7,
+                reviews: 56,
+                image: "https://images.unsplash.com/photo-1583592249237-2c6c2b3c89de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Traditional ethnic set for festivals"
+            },
+            {
+                id: 23,
+                name: "Kids' Jeans - Denim",
+                category: "kids",
+                tags: ["western", "sale"],
+                price: 699,
+                originalPrice: 1199,
+                rating: 4.3,
+                reviews: 45,
+                image: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Durable denim jeans for kids"
+            },
+            {
+                id: 24,
+                name: "Kids' Frock - Party Wear",
+                category: "kids",
+                tags: ["western", "new"],
+                price: 999,
+                originalPrice: 1599,
+                rating: 4.6,
+                reviews: 34,
+                image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Beautiful frock for birthday parties"
+            },
+            {
+                id: 25,
+                name: "Kids' Winter Set - Hoodie & Track Pants",
+                category: "kids",
+                tags: ["western", "sale"],
+                price: 1499,
+                originalPrice: 2299,
+                rating: 4.4,
+                reviews: 78,
+                image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                description: "Warm winter set for cold weather"
+            }
+        ];
+
+        // Additional products to reach 50+
+        for (let i = 26; i <= 50; i++) {
+            const categories = ['men', 'women', 'kids'];
+            const tagsOptions = [['new'], ['sale'], ['new', 'sale'], ['ethnic'], ['western']];
+            const category = categories[Math.floor(Math.random() * categories.length)];
+            const tags = tagsOptions[Math.floor(Math.random() * tagsOptions.length)];
+            const price = Math.floor(Math.random() * 4000) + 500;
+            const originalPrice = price + Math.floor(Math.random() * 2000) + 500;
+            
+            // Different product types based on category
+            let productName = '';
+            let imageUrl = '';
+            
+            if (category === 'men') {
+                const menProducts = [
+                    "Formal Shirt", "Casual Shirt", "Denim Jeans", "Chinos", "Blazer",
+                    "Sweater", "Hoodie", "Track Suit", "Shorts", "Traditional Kurta"
+                ];
+                productName = `Men's ${menProducts[Math.floor(Math.random() * menProducts.length)]}`;
+                imageUrl = `https://images.unsplash.com/photo-${1500000000000 + i}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800`;
+            } else if (category === 'women') {
+                const womenProducts = [
+                    "Maxi Dress", "Kurti", "Palazzo", "Top", "Skirt",
+                    "Jacket", "Coat", "Leggings", "Saree", "Salwar Suit"
+                ];
+                productName = `Women's ${womenProducts[Math.floor(Math.random() * womenProducts.length)]}`;
+                imageUrl = `https://images.unsplash.com/photo-${1600000000000 + i}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800`;
+            } else {
+                const kidsProducts = [
+                    "T-Shirt", "Shorts", "Frock", "Jeans", "Sweater",
+                    "Jacket", "Ethnic Set", "Party Wear", "School Uniform", "Winter Set"
+                ];
+                productName = `Kids' ${kidsProducts[Math.floor(Math.random() * kidsProducts.length)]}`;
+                imageUrl = `https://images.unsplash.com/photo-${1700000000000 + i}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800`;
+            }
+            
+            products.push({
+                id: i,
+                name: `${productName} - Style ${i}`,
+                category: category,
+                tags: tags,
+                price: price,
+                originalPrice: originalPrice,
+                rating: (Math.random() * 1.5 + 3.5).toFixed(1),
+                reviews: Math.floor(Math.random() * 200) + 20,
+                image: imageUrl,
+                description: `Premium quality ${productName.toLowerCase()} for comfortable wear`
+            });
+        }
+
+        // Cart state
+        let cart = [];
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        // DOM Elements
+        const productsGrid = document.getElementById('products-grid');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const overlay = document.getElementById('overlay');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        const cartCountElement = document.querySelector('.cart-count');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        // Initialize the app
+        function init() {
+            renderProducts(products);
+            setupEventListeners();
+            updateCartCount();
+        }
+
+        // Render products to the page
+        function renderProducts(productsToRender) {
+            productsGrid.innerHTML = '';
+            
+            productsToRender.forEach(product => {
+                const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+                const isNew = product.tags.includes('new');
+                const isSale = product.tags.includes('sale');
+                const isEthnic = product.tags.includes('ethnic');
+                const isWestern = product.tags.includes('western');
+                
+                const productElement = document.createElement('div');
+                productElement.className = 'product-card';
+                productElement.dataset.category = product.category;
+                productElement.dataset.tags = product.tags.join(' ');
+                
+                // Determine badge text
+                let badgeText = '';
+                if (isNew && isSale) badgeText = 'NEW & SALE';
+                else if (isNew) badgeText = 'NEW ARRIVAL';
+                else if (isSale) badgeText = `${discount}% OFF`;
+                else if (isEthnic) badgeText = 'ETHNIC';
+                else if (isWestern) badgeText = 'WESTERN';
+                
+                productElement.innerHTML = `
+                    ${badgeText ? `<div class="product-badge">${badgeText}</div>` : ''}
+                    
+                    <div class="product-img-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="addToWishlist(${product.id})">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" onclick="quickView(${product.id})">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-category">${product.category.toUpperCase()}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        
+                        <div class="product-rating">
+                            <div class="stars">
+                                ${getStarRating(product.rating)}
+                            </div>
+                            <span class="rating-count">(${product.reviews})</span>
+                        </div>
+                        
+                        <div class="product-price">
+                            ₹${product.price.toLocaleString()}
+                            ${product.originalPrice > product.price ? 
+                                `<span class="original-price">₹${product.originalPrice.toLocaleString()}</span>` : ''}
+                            ${discount > 0 ? `<span class="discount">Save ${discount}%</span>` : ''}
+                        </div>
+                        
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productElement);
+            });
+        }
+
+        // Get star rating HTML
+        function getStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5;
+            const emptyStars = 5 - Math.ceil(rating);
+            
+            return '★'.repeat(fullStars) + (halfStar ? '½' : '') + '☆'.repeat(emptyStars);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Cart toggle
+            cartIcon.addEventListener('click', toggleCart);
+            closeCart.addEventListener('click', toggleCart);
+            overlay.addEventListener('click', toggleCart);
+
+            // Filter products
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Filter products
+                    const filter = button.dataset.filter;
+                    filterProducts(filter);
+                });
+            });
+
+            // Search functionality
+            document.querySelector('.search-btn').addEventListener('click', performSearch);
+            document.querySelector('.search-bar').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            // Account button
+            document.getElementById('account-btn').addEventListener('click', () => {
+                showNotification('Account menu would open here');
+            });
+
+            // Wishlist button
+            document.getElementById('wishlist-btn').addEventListener('click', () => {
+                showNotification('Wishlist would open here');
+            });
+
+            // Newsletter subscription
+            document.querySelector('.newsletter button').addEventListener('click', subscribeNewsletter);
+        }
+
+        // Filter products by category
+        function filterProducts(filter) {
+            let filteredProducts;
+            
+            if (filter === 'all') {
+                filteredProducts = products;
+            } else if (filter === 'sale') {
+                filteredProducts = products.filter(p => p.tags.includes('sale'));
+            } else if (filter === 'new') {
+                filteredProducts = products.filter(p => p.tags.includes('new'));
+            } else if (filter === 'ethnic') {
+                filteredProducts = products.filter(p => p.tags.includes('ethnic'));
+            } else if (filter === 'western') {
+                filteredProducts = products.filter(p => p.tags.includes('western'));
+            } else {
+                filteredProducts = products.filter(p => p.category === filter);
+            }
+            
+            renderProducts(filteredProducts);
+        }
+
+        // Search products
+        function performSearch() {
+            const searchTerm = document.querySelector('.search-bar').value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                renderProducts(products);
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.description.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm) ||
+                product.tags.some(tag => tag.includes(searchTerm))
+            );
+            
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; background: white; border-radius: 20px;">
+                        <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                        <h3 style="color: var(--secondary); margin-bottom: 10px;">No products found for "${searchTerm}"</h3>
+                        <p style="color: var(--gray);">Try searching with different keywords</p>
+                    </div>
+                `;
+            } else {
+                renderProducts(filteredProducts);
+            }
+        }
+
+        // Add product to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart count and total
+            updateCartCount();
+            updateCartTotal();
+            
+            // Show success message
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            updateCartTotal();
+            renderCartItems();
+        }
+
+        // Update cart quantity
+        function updateCartQuantity(productId, newQuantity) {
+            const item = cart.find(item => item.id === productId);
+            
+            if (item) {
+                if (newQuantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    item.quantity = newQuantity;
+                    updateCartTotal();
+                    renderCartItems();
+                }
+            }
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Update cart total
+        function updateCartTotal() {
+            cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartTotalElement.textContent = `₹${cartTotal.toLocaleString()}`;
+        }
+
+        // Render cart items
+        function renderCartItems() {
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Your cart is empty</p>
+                        <p>Add some products to your cart!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₹${item.price.toLocaleString()} × ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString()}</div>
+                        <div class="cart-item-controls">
+                            <button onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                            <span class="cart-item-quantity">${item.quantity}</span>
+                            <button onclick="updateCartQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggle cart modal
+        function toggleCart() {
+            cartModal.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (cartModal.classList.contains('active')) {
+                renderCartItems();
+            }
+        }
+
+        // Add to wishlist
+        function addToWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`${product.name} added to wishlist!`);
+        }
+
+        // Quick view
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`Quick view: ${product.name} - ₹${product.price}`);
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.querySelector('.newsletter input').value;
+            if (email && validateEmail(email)) {
+                showNotification(`Thank you for subscribing! Check your email for confirmation.`);
+                document.querySelector('.newsletter input').value = '';
+            } else {
+                showNotification('Please enter a valid email address.');
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary), #ff6b95);
+                color: white;
+                padding: 18px 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 3000;
+                animation: slideIn 0.3s, fadeOut 0.3s 2.7s;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                max-width: 400px;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-check-circle" style="font-size: 20px;"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Validate email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize the app
+        init();
+    </script>
+</body>
+</html>
